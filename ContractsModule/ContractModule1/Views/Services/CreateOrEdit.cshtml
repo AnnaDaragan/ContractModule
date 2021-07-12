@@ -1,0 +1,138 @@
+﻿@model ContractModule1.Models.Service
+
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <form onsubmit="return SubmitAddEdit(this)" id="Serv">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="HashService" class="control-label"></label>
+                        <input asp-for="HashService" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="HashService" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Hash" class="control-label"></label>
+                        <input asp-for="Hash" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Hash" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-rub" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <input asp-for="Price" class="form-control" autocomplete="off" />
+                        </div>
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <textarea asp-for="Description" class="form-control" autocomplete="off"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="IDServiceType" class="control-label"></label>
+                        <select asp-for="IDServiceType" class="form-control" asp-items="ViewBag.IDServiceType">
+                            <option value="">-- Выберите тип услуги --</option>
+                        </select>
+                        <span asp-validation-for="IDServiceType" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Color" class="control-label"></label>
+                        <input asp-for="Color" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Color" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Code" class="control-label"></label>
+                        <input asp-for="Code" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Code" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Cabinet" class="control-label"></label>
+                        <input asp-for="Cabinet" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Cabinet" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="IDMKB" class="control-label"></label>
+                        <input asp-for="IDMKB" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="IDMKB" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input name="ResearchType" type="checkbox" value="" onchange="this.value=this.checked"> @Html.DisplayNameFor(model => model.ResearchType)
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input name="IsComplex" type="checkbox" value="" onchange="this.value=this.checked"> @Html.DisplayNameFor(model => model.IsComplex)
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input name="IsArchived" type="checkbox" value="" onchange="this.value=this.checked"> @Html.DisplayNameFor(model => model.IsArchived)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

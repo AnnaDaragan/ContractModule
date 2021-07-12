@@ -1,0 +1,98 @@
+﻿@model IEnumerable<ContractModule1.Models.Service>
+
+<table class="table" id="tableService">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HashService)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hash)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResearchType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsComplex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cabinet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IDMKB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsArchived)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="tableInf">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HashService)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hash)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceType.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResearchType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsComplex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cabinet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDMKB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsArchived)
+                </td>
+                <td>
+                    <a class='btn btn-info text-white' onclick=AddEditPersonalInfo(@item.Id)><i class='fa fa-pencil'></i> Изменить </a>
+                    <a class='btn btn-danger text-white' style='margin-left:5px' onclick=Delete(@item.Id)><i class='fa fa-trash'></i> Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

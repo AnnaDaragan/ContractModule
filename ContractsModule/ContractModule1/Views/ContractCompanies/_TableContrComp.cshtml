@@ -1,0 +1,111 @@
+﻿@model IEnumerable<ContractModule1.Models.ContractCompany>
+
+
+<table class="table" id="tableContractCompany">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberContract)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.INN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KPP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BIK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OGRN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckingAccount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CorrectiveAccount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChiefFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChiefSecondName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChiefThreeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bank)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="tableInf">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberContract)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.INN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KPP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BIK)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OGRN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckingAccount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CorrectiveAccount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChiefFirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChiefSecondName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChiefThreeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bank)
+                </td>
+                <td>
+                    <a class='btn btn-info text-white' onclick=AddEditPersonalInfo(@item.Id)><i class='fa fa-pencil'></i> Изменить </a>
+                    <a class='btn btn-danger text-white' style='margin-left:5px' onclick=Delete(@item.Id)><i class='fa fa-trash'></i> Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

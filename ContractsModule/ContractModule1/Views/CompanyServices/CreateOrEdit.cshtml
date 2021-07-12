@@ -1,0 +1,56 @@
+﻿ @model ContractModule1.Models.CompanyServices
+
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <form onsubmit="return SubmitAddEdit(this)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa fa-rub" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <input asp-for="Price" class="form-control" autocomplete="off" />
+                </div>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hash" class="control-label"></label>
+                <input asp-for="Hash" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Hash" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="IDContract" class="control-label"></label>
+                <select asp-for="IDContract" class="form-control" asp-items="ViewBag.IDContract">
+                    <option value="">-- Выберите номер компании --</option>
+                </select>
+                <span asp-validation-for="IDContract" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDService" class="control-label"></label>
+                <select asp-for="IDService" class="form-control" asp-items="ViewBag.IDService">
+                    <option value="">-- Выберите услугу --</option>
+                </select>
+                <span asp-validation-for="IDService" class="text-danger"></span>
+            </div>
+            <div class="fform-check">
+                <label class="form-check-label">
+                    <input name="IsArchived" type="checkbox" value="" onchange="this.value=this.checked"> @Html.DisplayNameFor(model => model.IsArchived)
+                </label>
+
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

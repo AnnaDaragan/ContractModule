@@ -1,0 +1,135 @@
+﻿@model ContractModule1.Models.ContractCompany
+
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <form onsubmit="return SubmitAddEdit(this)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="DateTime" class="control-label"></label>
+                <input asp-for="DateTime" class="form-control" autocomplete="off" />
+                <span asp-validation-for="DateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDCompany" class="control-label"></label>
+                <select asp-for="IDCompany" class="form-control" asp-items="ViewBag.IDCompany">
+                    <option value="">-- Выберите компанию --</option>
+                </select>
+                <span asp-validation-for="IDCompany" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="NumberContract" class="control-label"></label>
+                        <input asp-for="NumberContract" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="NumberContract" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="INN" class="control-label"></label>
+                        <input asp-for="INN" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="INN" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="KPP" class="control-label"></label>
+                        <input asp-for="KPP" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="KPP" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="BIK" class="control-label"></label>
+                        <input asp-for="BIK" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="BIK" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="OGRN" class="control-label"></label>
+                        <input asp-for="OGRN" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="OGRN" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="CheckingAccount" class="control-label"></label>
+                        <input asp-for="CheckingAccount" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="CheckingAccount" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="CorrectiveAccount" class="control-label"></label>
+                        <input asp-for="CorrectiveAccount" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="CorrectiveAccount" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Address" class="control-label"></label>
+                        <input asp-for="Address" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Bank" class="control-label"></label>
+                        <input asp-for="Bank" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="Bank" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="ChiefFirstName" class="control-label"></label>
+                        <input asp-for="ChiefFirstName" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="ChiefFirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="ChiefSecondName" class="control-label"></label>
+                        <input asp-for="ChiefSecondName" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="ChiefSecondName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="ChiefThreeName" class="control-label"></label>
+                        <input asp-for="ChiefThreeName" class="form-control" autocomplete="off" />
+                        <span asp-validation-for="ChiefThreeName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input name="Active" type="checkbox" value="" onchange="this.value=this.checked"> @Html.DisplayNameFor(model => model.Active)
+                </label>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

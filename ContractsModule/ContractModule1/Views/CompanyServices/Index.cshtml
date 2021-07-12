@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ContractModule1.Models.CompanyServices>
+
+@{
+    ViewData["Title"] = "CompanyServices";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h1>Услуги компаний</h1>
+    </div>
+    <div class="col-2 ml-auto aling-self-center">
+        <a class="btn btn-success text-white" style="margin-bottom:10px" onclick="AddEditPersonalInfo(0)"> <i class="fa fa-plus"> </i> Создать запись</a>
+    </div>
+</div>
+
+<div class="col-2 ml-auto aling-self-center">
+    <input id="myInput" style="margin-bottom:10px" type="text" placeholder="Поиск...">
+</div>
+
+
+<div id="tabCS" style="overflow-x: auto;">
+    @await Html.PartialAsync("_TableCompServ", Model)
+</div>
+
+
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+    <script src="~/js/siteCompServ.js" asp-append-version="true"></script>
+}

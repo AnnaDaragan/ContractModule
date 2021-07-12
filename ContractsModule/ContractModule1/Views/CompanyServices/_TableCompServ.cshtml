@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ContractModule1.Models.CompanyServices>
+
+
+    <table class="table" id="tableCompanyServices">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Price)</th>
+                <th>@Html.DisplayNameFor(model => model.Hash)</th>
+                <th>@Html.DisplayNameFor(model => model.Contract)</th>
+                <th>@Html.DisplayNameFor(model => model.Service)</th>
+                <th>@Html.DisplayNameFor(model => model.IsArchived)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="tableInf">
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hash)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contract.NumberContract)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Service.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsArchived)
+                </td>
+                <td>
+                    <a class='btn btn-info text-white' onclick=AddEditPersonalInfo(@item.Id)><i class='fa fa-pencil'></i> Изменить </a>
+                    <a class='btn btn-danger text-white' style='margin-left:5px' onclick=Delete(@item.Id)><i class='fa fa-trash'></i> Удалить</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>

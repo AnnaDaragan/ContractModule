@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ContractModule1.Models.ServiceType>
+
+    <table class="table" id="tableServiceType">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.Description)</th>
+                <th>@Html.DisplayNameFor(model => model.IsArchived)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="tableInf">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsArchived)
+                    </td>
+                    <td>
+                        <a class='btn btn-info text-white' onclick=AddEditPersonalInfo(@item.Id)><i class='fa fa-pencil'></i> Изменить</a>
+                        <a class='btn btn-danger text-white' style='margin-left:5px' onclick=Delete(@item.Id)><i class='fa fa-trash'></i> Удалить</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
